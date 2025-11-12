@@ -27,6 +27,6 @@ public:
     void setPrevNode(DoublyNode* node);
 };
 
-#include "DoublyLinkedListNode.inl"
+#include "../implementations/DoublyLinkedListNode.tpp"
 
 #endif

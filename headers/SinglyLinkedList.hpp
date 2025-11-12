@@ -73,6 +73,6 @@ public:
 };
 
 
-#include "SinglyLinkedList.inl"
+#include "../implementations/SinglyLinkedList.tpp"
 
 #endif

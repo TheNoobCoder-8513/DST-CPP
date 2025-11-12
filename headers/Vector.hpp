@@ -69,6 +69,6 @@ public:
     friend std::ostream& operator<<<>(std::ostream& stream, const Vector& vec);
 };
 
-#include "Vector.inl"
+#include "../implementations/Vector.tpp"
 
 #endif

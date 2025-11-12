@@ -67,6 +67,6 @@ public:
     friend std::ostream& operator<<<T>(std::ostream& stream, const DoublyList<T>& list);
 };
 
-#include "DoublyLinkedList.inl"
+#include "../implementations/DoublyLinkedList.tpp"
 
 #endif

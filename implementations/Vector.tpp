@@ -2,7 +2,7 @@
 #include <sstream>
 #include <exception>
 
-#include "Vector.hpp"
+#include "../headers/Vector.hpp"
 
 template <typename T>    
 Vector<T>::Vector()        

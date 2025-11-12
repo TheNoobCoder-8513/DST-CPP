@@ -22,6 +22,6 @@ public:
     void setNextNode(SinglyNode* node);
 };
 
-#include "SinglyLinkedListNode.inl"
+#include "../implementations/SinglyLinkedListNode.tpp"
 
 #endif

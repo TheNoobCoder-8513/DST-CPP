@@ -1,0 +1,29 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "cStandard": "c23",
+            "cppStandard": "c++23",
+            "intelliSenseMode": "linux-gcc-x64",
+            "compilerPath": "/usr/bin/g++-14",
+            "compilerArgs": [
+                "-std=c++23",
+                "-ggdb",
+                
+                "-Wall",
+                "-Werror",
+                "-Wextra",
+                "-Weffc++",
+                "-Wpedantic",
+                "-pedantic-errors",
+                "-Wconversion",
+                "-Wsign-conversion"
+            ]
+        }
+    ],
+    "version": 4
+}

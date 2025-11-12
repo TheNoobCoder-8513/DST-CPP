@@ -1,4 +1,4 @@
-#include "DoublyLinkedListNode.hpp"
+#include "../headers/DoublyLinkedListNode.hpp"
 
 template <typename T>
 DoublyNode<T>::DoublyNode(T elem, DoublyNode* prev, DoublyNode* next)

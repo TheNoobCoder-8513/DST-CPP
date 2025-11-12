@@ -2,10 +2,10 @@
 #include <memory>
 #include <exception>
 
-#include "List.hpp"
+#include "../headers/List.hpp"
 
-#include "SinglyLinkedList.hpp"
-#include "DoublyLinkedList.hpp"
+#include "../headers/SinglyLinkedList.hpp"
+#include "../headers/DoublyLinkedList.hpp"
 
 
 template <typename T, template <typename> class Impl>

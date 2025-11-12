@@ -1,4 +1,4 @@
-#include "SinglyLinkedListNode.hpp"
+#include "../headers/SinglyLinkedListNode.hpp"
 
 template <typename T>
 SinglyNode<T>::SinglyNode(T elem, SinglyNode* next)

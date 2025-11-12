@@ -54,6 +54,6 @@ public:
     friend std::ostream& operator<<<>(std::ostream& os, const List& l);
 };
 
-#include "List.inl"
+#include "../implementations/List.tpp"
 
 #endif
