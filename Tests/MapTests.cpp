@@ -55,4 +55,18 @@ int main()
     std::cout << "isEmpty() Tests:\n";
     std::cout << "Is map empty now ? " << std::boolalpha << mp.isEmpty() << '\n';
     std::cout << std::endl;
+
+    std::cout << "[] operator on non-const Test:\n";
+    std::cout << "[\"Anshuman\"]: "; mp["Anshuman"] = 70;
+    std::cout << "State: " << mp << '\n';
+    std::cout << std::endl;
+
+    std::cout << "length Test:\n";
+    std::cout << "Length: " << mp.length() << '\n';
+    std::cout << std::endl;
+
+    std::cout << "initializer list test:\n";
+    Map<std::string, int> initMap {{"Anshu", 45}, {"Nick", 11}};
+    std::cout << "State: " << initMap << '\n';
+    std::cout << std::endl;
 }

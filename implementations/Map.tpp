@@ -125,19 +125,24 @@ std::string Map<K, V>::toStr() const
 }
 
 template <typename K, typename V>
-const K& Map<K, V>::operator[](int index) const
+const V& Map<K, V>::operator[](const K& key) const
 {
-    if (index >= length()) 
-        throw std::out_of_range {"Index Error: Index Out of range"};
-    return m_map[index].m_key;
+    for (int index {}; index < length(); ++index)
+    {
+        if (m_map[index].m_key == key) return m_map[index].m_val;
+    }
+    throw std::logic_error {"Logic Error: Key not present"};
 }
 
 template <typename K, typename V>
-K& Map<K, V>::operator[](int index)
+V& Map<K, V>::operator[](const K& key)
 {
-    if (index >= length()) 
-        throw std::out_of_range {"Index Error: Index Out of range"};
-    return m_map[index].m_key;
+    for (int index {}; index < length(); ++index)
+    {
+        if (m_map[index].m_key == key) return m_map[index].m_val;
+    }
+    addPair(key, V {});
+    return m_map[length() - 1].m_val;
 }
 
 template <typename K, typename V>

@@ -41,9 +41,9 @@ public:
 
     std::string toStr() const;
 
-    const K& operator[](int index) const;
+    const V& operator[](const K& key) const;
 
-    K& operator[](int index);
+    V& operator[](const K& key);
 
     friend std::ostream& operator<<(std::ostream& stream, const Map& m_map)
     {

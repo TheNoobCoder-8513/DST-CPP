@@ -282,14 +282,16 @@ std::string Vector<T>::toStr() const
 template <typename T>
 const T& Vector<T>::operator[](int index) const
 {
-    if (index >= length()) throw std::out_of_range {"Index Error: Index Out of range"};
+    if (index >= length()) 
+        throw std::out_of_range {"Index Error: Index Out of range"};
     return m_arr[index];
 }
 
 template <typename T>
 T& Vector<T>::operator[](int index)
 {
-    if (index >= length()) throw std::out_of_range {"Index Error: Index Out of range"};
+    if (index >= length()) 
+        throw std::out_of_range {"Index Error: Index Out of range"};
     return m_arr[index];
 }
 
