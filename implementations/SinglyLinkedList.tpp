@@ -272,7 +272,7 @@ SinglyList<T>& SinglyList<T>::concat(SinglyList<T>&& ls)
     }
     else
     {
-        m_tail->m_next = ls.m_head;
+        m_tail->setNextNode(m_head);
         m_tail = ls.m_tail;
     }
 
