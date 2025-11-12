@@ -75,15 +75,15 @@ T List<T, Impl>::removeLast()
 }
 
 template <typename T, template <typename> class Impl>
-const T& List<T, Impl>::insertAtIndex(const T& elem, int pos)
+const T& List<T, Impl>::insertAt(const T& elem, int pos)
 {
-    return list.insertAtIndex(elem, pos);
+    return list.insertAt(elem, pos);
 }
 
 template <typename T, template <typename> class Impl>
-T List<T, Impl>::removeFromIndex(int pos)
+T List<T, Impl>::removeFrom(int pos)
 {
-    return list.removeFromIndex(pos);
+    return list.removeFrom(pos);
 }
 
 template <typename T, template <typename> class Impl>

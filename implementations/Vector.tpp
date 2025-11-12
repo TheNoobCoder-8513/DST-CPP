@@ -1,8 +1,9 @@
+#include "../headers/Vector.hpp"
+
 #include <iostream>
 #include <sstream>
 #include <exception>
 
-#include "../headers/Vector.hpp"
 
 template <typename T>    
 Vector<T>::Vector()        
@@ -129,7 +130,9 @@ T Vector<T>::removeFirst()
 {
     if (m_length == 0)
         throw std::out_of_range{"Remove Error: Vector is empty"};
+
     T obj {m_arr[0]};
+    
     for (int index {}; index < length() - 1; ++index)
     {
         m_arr[index] = m_arr[index + 1];
@@ -148,9 +151,61 @@ T Vector<T>::removeLast()
 }
 
 template <typename T>
+const T& Vector<T>::insertAt(const T& elem, int pos)
+{
+    if (pos < 0 || pos > length())
+        throw std::out_of_range {"Index Error: Index Out of range"};
+    if (pos == 0)
+        return addFirst(elem);
+    else
+    if (pos == length())
+        return addLast(elem);
+    else
+    {
+        if (isFull())
+        {
+            if (!reserve(capacity() * 2))
+            throw std::length_error {"Length Error: Unable to reserve space for more "
+                "elements due to no more available free memory"};
+        }
+        for (int index {length()}; index > pos; --index)
+        {
+            m_arr[index] = m_arr[index - 1];
+        }
+        m_arr[pos] = elem;
+        ++m_length;
+        return m_arr[pos];
+    }
+}
+
+template <typename T>
+T Vector<T>::removeFrom(int pos)
+{
+    if (pos < 0 || pos >= length())
+        throw std::out_of_range {"Index Error: Index Out of range"};
+    
+    if (pos == 0)
+        return removeFirst();
+    else
+    if (pos == length() - 1)
+        return removeLast();
+    else
+    {
+        T obj {m_arr[pos]};
+        for (int index {pos}; index < length() - 1; ++index)
+        {
+            m_arr[index] = m_arr[index + 1];
+        }
+        --m_length;
+        return obj;
+    }
+}
+
+
+template <typename T>
 bool Vector<T>::isEmpty() const 
 {
-    return !length() && capacity();
+    return !length();
 }
 
 template <typename T>
@@ -225,12 +280,18 @@ std::string Vector<T>::toStr() const
 }
 
 template <typename T>
-const T& Vector<T>::operator[](int index)
+const T& Vector<T>::operator[](int index) const
 {
     if (index >= length()) throw std::out_of_range {"Index Error: Index Out of range"};
     return m_arr[index];
 }
 
+template <typename T>
+T& Vector<T>::operator[](int index)
+{
+    if (index >= length()) throw std::out_of_range {"Index Error: Index Out of range"};
+    return m_arr[index];
+}
 
 template <typename T>
 std::ostream& operator<<(std::ostream& stream, const Vector<T>& vec)

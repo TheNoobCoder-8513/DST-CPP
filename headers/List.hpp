@@ -45,9 +45,9 @@ public:
 
     T removeLast();
 
-    const T& insertAtIndex(const T& elem, int pos);
+    const T& insertAt(const T& elem, int pos);
 
-    T removeFromIndex(int pos);
+    T removeFrom(int pos);
 
     void clear();
 

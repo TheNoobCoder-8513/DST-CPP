@@ -124,7 +124,7 @@ const T& SinglyList<T>::addLast(const T& elem)
 }
 
 template <typename T>
-const T& SinglyList<T>::insertAtIndex(const T& elem, int pos)
+const T& SinglyList<T>::insertAt(const T& elem, int pos)
 {
     if (pos > m_length || pos < 0) 
         throw std::out_of_range {"Invalid access error: Index is out of bounds"};
@@ -186,7 +186,7 @@ T SinglyList<T>::removeLast()
 
 
 template <typename T>
-T SinglyList<T>::removeFromIndex(int pos)
+T SinglyList<T>::removeFrom(int pos)
 {
     if (pos >= m_length || pos < 0) 
         throw std::out_of_range {"Invalid access error: Index is out of bounds"};

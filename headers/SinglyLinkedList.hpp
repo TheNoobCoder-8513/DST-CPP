@@ -52,9 +52,9 @@ public:
 
     const T& atIndex(int pos) const;
 
-    const T& insertAtIndex(const T& elem, int pos);
+    const T& insertAt(const T& elem, int pos);
 
-    T removeFromIndex(int pos);
+    T removeFrom(int pos);
 
     const T& addFirst(const T& elem);
 

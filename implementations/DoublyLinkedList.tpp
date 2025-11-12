@@ -135,7 +135,7 @@ const T& DoublyList<T>::addLast(const T& elem)
 
 
 template <typename T>
-const T& DoublyList<T>::insertAtIndex(const T& elem, int pos)
+const T& DoublyList<T>::insertAt(const T& elem, int pos)
 {
     if (pos < 0 || pos > m_length) 
         throw std::out_of_range {"Invalid access error: Index is out of bounds"};
@@ -217,7 +217,7 @@ T DoublyList<T>::removeLast()
 }
 
 template <typename T>
-T DoublyList<T>::removeFromIndex(int pos)
+T DoublyList<T>::removeFrom(int pos)
 {
     if (pos < 0 || pos >= m_length) 
         throw std::out_of_range {"Invalid access error: Index is out of bounds"};

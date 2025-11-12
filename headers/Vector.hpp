@@ -2,7 +2,6 @@
 #define VECTOR_HPP
 
 #include <iostream>
-#include <sstream>
 #include <exception>
 #include <initializer_list>
 
@@ -24,7 +23,7 @@ private:
 public:
     Vector();
 
-    Vector(int len);
+    explicit Vector(int len);
 
     Vector(const std::initializer_list<T>& ls);
 
@@ -47,6 +46,10 @@ public:
 
     T removeLast();
 
+    const T& insertAt(const T& elem, int pos);
+
+    T removeFrom(int pos);
+
     bool isEmpty() const;
 
     bool isFull() const;
@@ -63,7 +66,9 @@ public:
 
     std::string toStr() const;
 
-    const T& operator[](int index);
+    const T& operator[](int index) const;
+
+    T& operator[](int index);
 
 public:
     friend std::ostream& operator<<<>(std::ostream& stream, const Vector& vec);

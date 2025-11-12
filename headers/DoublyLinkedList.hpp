@@ -51,9 +51,9 @@ public:
 
     const T& addLast(const T& elem);
 
-    const T& insertAtIndex(const T& elem, int pos);
+    const T& insertAt(const T& elem, int pos);
 
-    T removeFromIndex(int pos);
+    T removeFrom(int pos);
     
     T removeFirst();
 
