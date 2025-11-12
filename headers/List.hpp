@@ -49,8 +49,15 @@ public:
 
     T removeFromIndex(int pos);
 
+    void clear();
+
+    List<T, Impl>& concat(const List<T, Impl>& ls);
+
+    List<T, Impl>& concat(List<T, Impl>&& ls);
+    
     std::string toStr() const;
 
+public:
     friend std::ostream& operator<<<>(std::ostream& os, const List& l);
 };
 

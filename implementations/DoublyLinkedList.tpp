@@ -305,6 +305,47 @@ const T& DoublyList<T>::atIndex(int pos) const
 }
 
 template <typename T>
+DoublyList<T>& DoublyList<T>::concat(const DoublyList<T>& ls)
+{
+    if (this == &ls) return *this;
+    
+    DoublyNode<T>* temp {ls.m_head};
+    while (temp != nullptr)
+    {
+        addLast(temp->getElem());
+        temp = temp->getNextNode();
+    }
+    return *this;
+}
+
+
+template <typename T>
+DoublyList<T>& DoublyList<T>::concat(DoublyList<T>&& ls)
+{
+    if (this == &ls) return *this;
+    if (ls.m_head == nullptr) return *this;
+
+    if (m_head == nullptr)
+    {
+        m_head = ls.m_head;
+        m_tail = ls.m_tail;
+    }
+    else
+    {
+        m_tail->m_next = ls.m_head;
+        ls.m_head->setPrevNode(m_tail);
+        m_tail = ls.m_tail;
+    }
+
+    m_length += ls.m_length;
+    ls.m_head = ls.m_tail = nullptr;
+    ls.m_length = 0;
+
+    return *this;
+}
+
+
+template <typename T>
 void DoublyList<T>::clear()
 {
     while (!isEmpty()) removeFirst();

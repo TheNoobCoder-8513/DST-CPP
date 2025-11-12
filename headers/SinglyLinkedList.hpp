@@ -65,6 +65,10 @@ public:
     T removeLast();
 
     void clear();
+
+    SinglyList& concat(const SinglyList& ls);
+
+    SinglyList& concat(SinglyList&& ls);
     
     std::string toStr() const;
 

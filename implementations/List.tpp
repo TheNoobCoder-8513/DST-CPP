@@ -83,8 +83,30 @@ const T& List<T, Impl>::insertAtIndex(const T& elem, int pos)
 template <typename T, template <typename> class Impl>
 T List<T, Impl>::removeFromIndex(int pos)
 {
-    return removeFromIndex(pos);
+    return list.removeFromIndex(pos);
 }
+
+template <typename T, template <typename> class Impl>
+void List<T, Impl>::clear()
+{
+    list.clear();
+}
+
+template <typename T, template <typename> class Impl>
+List<T, Impl>& List<T, Impl>::concat(const List<T, Impl>& ls)
+{
+    list.concat(ls.list);
+    return *this;
+}
+
+template <typename T, template <typename> class Impl>
+List<T, Impl>& List<T, Impl>::concat(List<T, Impl>&& ls)
+{
+    list.concat(std::move(ls.list));
+    return *this;
+}
+
+
 
 template <typename T, template <typename> class Impl>
 std::string List<T, Impl>::toStr() const 

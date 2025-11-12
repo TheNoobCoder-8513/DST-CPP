@@ -60,6 +60,10 @@ public:
     T removeLast();
 
     void clear();
+
+    DoublyList& concat(const DoublyList& ls);
+
+    DoublyList& concat(DoublyList&& ls);
     
     std::string toStr() const;
 

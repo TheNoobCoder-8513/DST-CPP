@@ -246,6 +246,45 @@ std::string SinglyList<T>::toStr() const
 }
 
 template <typename T>
+SinglyList<T>& SinglyList<T>::concat(const SinglyList<T>& ls)
+{
+    if (this == &ls) return *this;
+    
+    SinglyNode<T>* temp {ls.m_head};
+    while (temp != nullptr)
+    {
+        addLast(temp->getElem());
+        temp = temp->getNextNode();
+    }
+    return *this;
+}
+
+template <typename T>
+SinglyList<T>& SinglyList<T>::concat(SinglyList<T>&& ls)
+{
+    if (this == &ls) return *this;
+    if (ls.m_head == nullptr) return *this;
+
+    if (m_head == nullptr)
+    {
+        m_head = ls.m_head;
+        m_tail = ls.m_tail;
+    }
+    else
+    {
+        m_tail->m_next = ls.m_head;
+        m_tail = ls.m_tail;
+    }
+
+    m_length += ls.m_length;
+    ls.m_head = ls.m_tail = nullptr;
+    ls.m_length = 0;
+
+    return *this;
+}
+
+
+template <typename T>
 void SinglyList<T>::clear()
 {
     while (!isEmpty()) removeFirst();
