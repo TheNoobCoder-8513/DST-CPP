@@ -332,7 +332,7 @@ DoublyList<T>& DoublyList<T>::concat(DoublyList<T>&& ls)
     }
     else
     {
-        m_tail->m_next = ls.m_head;
+        m_tail->setNextNode(m_head);
         ls.m_head->setPrevNode(m_tail);
         m_tail = ls.m_tail;
     }
