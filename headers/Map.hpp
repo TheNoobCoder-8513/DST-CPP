@@ -7,21 +7,29 @@
 #include <string>
 #include <sstream>
 #include <exception>
+#include <initializer_list>
 
 template <typename K, typename V>
 class Map
 {
 private:
-    Vector<MapElem<K, V>> map {};
+    Vector<MapElem<K, V>> m_map {};
+
+public:
+    Map();
+    
+    Map(const std::initializer_list<MapElem<K, V>>& ls);
 
 public:
     bool isEmpty() const;
 
+    int length() const;
+
     bool hasKey(const K& key) const;
 
-    const V& addPair(const K& key, const V& val);
+    const K& addPair(const K& key, const V& val);
 
-    V removePair(const K& key);
+    MapElem<K, V> removePair(const K& key);
 
     const V& update(const K& key, const V& val);
 
@@ -29,15 +37,17 @@ public:
 
     Vector<K> getKeys() const;
 
-    Vector<K> getVals() const;
+    Vector<V> getVals() const;
 
     std::string toStr() const;
 
-    friend std::ostream& operator<<(std::ostream& stream, const Map& map)
+    friend std::ostream& operator<<(std::ostream& stream, const Map& m_map)
     {
-        stream << map.toStr();
+        stream << m_map.toStr();
         return stream;
     }
 };
+
+#include "../implementations/Map.tpp"
 
 #endif

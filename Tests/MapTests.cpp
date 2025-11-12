@@ -11,7 +11,6 @@ int main()
     mp.addPair("Navratan", 2);
     mp.update("Laddooo", 99);
     std::cout << "State: " << mp << '\n';
-
     std::cout << std::endl;
 
     // Commented to test further testcases
@@ -34,5 +33,26 @@ int main()
     std::cout << "valOf(Anshuman): " << mp.valOf("Anshuman") << '\n';
     std::cout << "valOf(Navratan): " << mp.valOf("Navratan") << '\n';
     // std::cout << "valOf(India): " << mp.valOf("India") << '\n'; /* -- > throws error */
+    std::cout << std::endl;
+
+    std::cout << "getKeys() Tests:\n";
+    std::cout << "getKeys(): " << mp.getKeys() << '\n';
+    std::cout << std::endl;
+
+    std::cout << "getVals() Tests:\n";
+    std::cout << "getVals(): " << mp.getVals() << '\n';
+    std::cout << std::endl;
+
+    std::cout << "State: " << mp << '\n';
+
+    std::cout << "Emptyness test:\n";
+    std::cout << "removing Anshuman: " << mp.removePair("Anshuman") << '\n';
+    std::cout << "removing Laddooo: " << mp.removePair("Laddooo") << '\n';
+    std::cout << "removing Bisleri: " << mp.removePair("Bisleri") << '\n';
+    std::cout << "removing Navratan: " << mp.removePair("Navratan") << '\n';
+    std::cout << std::endl;
+
+    std::cout << "isEmpty() Tests:\n";
+    std::cout << "Is map empty now ? " << std::boolalpha << mp.isEmpty() << '\n';
     std::cout << std::endl;
 }
