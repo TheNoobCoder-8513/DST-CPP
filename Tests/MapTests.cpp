@@ -1,5 +1,7 @@
 #include "../headers/Map.hpp"
 
+#include "Test.hpp"
+
 
 int main()
 {
@@ -69,4 +71,8 @@ int main()
     Map<std::string, int> initMap {{"Anshu", 45}, {"Nick", 11}};
     std::cout << "State: " << initMap << '\n';
     std::cout << std::endl;
+
+    TEST(initMap.isEmpty(), 0);
+
+
 }
