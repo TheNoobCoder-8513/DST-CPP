@@ -41,6 +41,10 @@ public:
 
     std::string toStr() const;
 
+    const K& operator[](int index) const;
+
+    K& operator[](int index);
+
     friend std::ostream& operator<<(std::ostream& stream, const Map& m_map)
     {
         stream << m_map.toStr();

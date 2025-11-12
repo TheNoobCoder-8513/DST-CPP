@@ -269,14 +269,14 @@ std::string Vector<T>::toStr() const
 {
     if (length() == 0) return "[]";
     std::ostringstream stream;
-        stream << '[';
-        for (int index {}; index < length(); ++index)
-        {
-            if (index) stream << ", ";
-            stream << m_arr[index];
-        }
-        stream << ']';
-        return stream.str();
+    stream << '[';
+    for (int index {}; index < length(); ++index)
+    {
+        if (index) stream << ", ";
+        stream << m_arr[index];
+    }
+    stream << ']';
+    return stream.str();
 }
 
 template <typename T>

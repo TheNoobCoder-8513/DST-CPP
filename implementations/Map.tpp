@@ -125,6 +125,22 @@ std::string Map<K, V>::toStr() const
 }
 
 template <typename K, typename V>
+const K& Map<K, V>::operator[](int index) const
+{
+    if (index >= length()) 
+        throw std::out_of_range {"Index Error: Index Out of range"};
+    return m_map[index].m_key;
+}
+
+template <typename K, typename V>
+K& Map<K, V>::operator[](int index)
+{
+    if (index >= length()) 
+        throw std::out_of_range {"Index Error: Index Out of range"};
+    return m_map[index].m_key;
+}
+
+template <typename K, typename V>
 std::ostream& operator<<(std::ostream& stream, const Map<K, V>& map)
 {
     stream << map.toStr();
